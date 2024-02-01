@@ -5,23 +5,24 @@
   </head>
   <body>
     <a-scene>
-      
+
       <a-assets>
         <a-asset-item id="tree-obj" src="./assets/QueenPalmTree.obj"></a-asset-item>
         <a-asset-item id="tree-mtl" src="./assets/QueenPalmTree.mtl"></a-asset-item>
         <a-asset-item id="ocean-obj" src="./assets/Ocean.obj"></a-asset-item>
         <a-asset-item id="ocean-mtl" src="./assets/Ocean.mtl"></a-asset-item>
-        <a-asset-item id="grass" src="./assets/leafy_grass_1k.gltf"></a-asset-item>
+        <a-asset-item id="grass" src="assets/leafy_grass_1k.gltf"></a-asset-item>
         <img id="ground" src="assets/Grass.jpg">
         <img id="ground-normal" src="assets/Grass-normal.jpg">
       </a-assets>
 
       <a-entity position="0 -.2 -10" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
-      <a-entity position="2 1 -10" obj-model="obj: #ocean-obj; mtl: #ocean-mtl"></a-entity>
-      <a-entity position="0 0 -10" gltf-model="#grass"></a-entity>
       <a-plane material="shader: flat; color: #FFFFFF; src: #ground; repeat: 500 500; normal-map: #ground-normal; normal-texture-repeat: 500 500" rotation="-90 0 0" scale="500 500 1"></a-plane>
       <a-sky color="#92C7ff"></a-sky>
+
     </a-scene>
+
     <script src="script.js"></script>
+
   </body>
 </html>
