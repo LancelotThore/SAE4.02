@@ -1,18 +1,26 @@
 <html>
   <head>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component@1.3.3/dist/aframe-environment-component.min.js"></script>
   </head>
   <body>
-    <a-scene log="Hello, Scene !">
+    <a-scene>
+      
       <a-assets>
         <a-asset-item id="tree-obj" src="./assets/QueenPalmTree.obj"></a-asset-item>
         <a-asset-item id="tree-mtl" src="./assets/QueenPalmTree.mtl"></a-asset-item>
-        <a-asset-item id="plane-gltf" src="./assets/leafy_grass_1k.gltf"></a-asset-item>
+        <a-asset-item id="ocean-obj" src="./assets/Ocean.obj"></a-asset-item>
+        <a-asset-item id="ocean-mtl" src="./assets/Ocean.mtl"></a-asset-item>
+        <a-asset-item id="grass" src="./assets/leafy_grass_1k.gltf"></a-asset-item>
+        <img id="ground" src="assets/Grass.jpg">
+        <img id="ground-normal" src="assets/Grass-normal.jpg">
       </a-assets>
+
       <a-entity position="0 -.2 -10" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="50" height="50" color="#7BC8A4"></a-plane>
-      <a-box log="Hello, Box!"></a-box>
-      <a-sky color="#92C7CF"></a-sky>
+      <a-entity position="2 1 -10" obj-model="obj: #ocean-obj; mtl: #ocean-mtl"></a-entity>
+      <a-entity position="0 0 -10" gltf-model="#grass"></a-entity>
+      <a-plane material="shader: flat; color: #FFFFFF; src: #ground; repeat: 500 500; normal-map: #ground-normal; normal-texture-repeat: 500 500" rotation="-90 0 0" scale="500 500 1"></a-plane>
+      <a-sky color="#92C7ff"></a-sky>
     </a-scene>
     <script src="script.js"></script>
   </body>
