@@ -1,20 +1,24 @@
 <html>
-  <head>
-    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-  </head>
-  <body>
-    <a-scene>
-      <a-assets>
-        <a-asset-item id="tree-obj" src="./QueenPalmTree.obj"></a-asset-item>
-        <a-asset-item id="tree-mtl" src="./QueenPalmTree.mtl"></a-asset-item>
-      </a-assets>
-      <a-entity position="0 -.2 -10" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
-      <a-entity position="0 -.2 10" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="50" height="50" color="#7BC8A4"></a-plane>
-      
-      <a-sky color="#92C7CF"></a-sky>
-    </a-scene>
-  </body>
+
+<head>
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene>
+    <a-assets>
+      <a-asset-item id="tree-obj" src="./QueenPalmTree.obj"></a-asset-item>
+      <a-asset-item id="tree-mtl" src="./QueenPalmTree.mtl"></a-asset-item>
+      <a-assets-item><img id="sky" src="./sky2.png"></a-assets-item>
+    </a-assets>
+    <a-entity position="0 -.2 -10" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+    <a-entity position="0 -.2 10" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+    <a-plane position="0 0 -4" rotation="-90 0 0" width="50" height="50" color="#7BC8A4"></a-plane>
+
+    <a-sky src="#sky" segments-width="126"></a-sky>
+  </a-scene>
+</body>
+
 </html>
 
 https://stemkoski.github.io/Three.js/index.html
