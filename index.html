@@ -13,12 +13,11 @@
         <a-asset-item id="grass-glhf" src="assets/leafy_grass_1k.gltf"></a-asset-item>
         <img id="ground-jpg" src="assets/Grass.jpg">
         <img id="ground-normal-jpg" src="assets/Grass-normal.jpg">
-      </a-assets>
-
-      <a-entity id="tree" position="0 -.2 -10" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity>
+      </a-assets> 
+      <a-entity id="tree" position="0 -.2 -10" obj-model="obj: #tree-obj; mtl: #tree-mtl"></a-entity> 
       <!-- <a-plane id="ground" material="shader: flat; color: #FFFFFF; src: #ground-jpg; repeat: 500 500; normal-map: #ground-normal-jpg; normal-texture-repeat: 500 500" rotation="-90 0 0" scale="500 500 1"></a-plane> -->
       <!-- <a-sky id="sky" color="#92C7ff"></a-sky> -->
-      <a-entity environment="groundColor: #1a512e; groundColor2: #1a512e; ground-size: 20;"></a-entity>
+      <a-entity id="ground" environment="groundColor: #1a512e; groundColor2: #1a512e; ground-size: 20; groundTexture:squares" scale="0.2 0.2 0.2"></a-entity>
       </a-scene>
 
     <script src="script.js"></script>
