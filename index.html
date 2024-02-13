@@ -14,9 +14,6 @@
         <a-asset-item id="grass-obj" src="assets/herbe/model.obj"></a-asset-item>
         <a-asset-item id="grass-mtl" src="assets/herbe/materials.mtl"></a-asset-item>
 
-        <a-asset-item id="flower-obj" src="assets/fleur hibiscus/HibicusFlower.obj"></a-asset-item>
-        <a-asset-item id="flower-mtl" src="assets/fleur hibiscus/HibicusFlower.mtl"></a-asset-item>
-
         <a-asset-item id="bush-glb" src="assets/buisson/Bushes.glb"></a-asset-item>
 
         <img id="sky-img" src="assets/sky/gradient.jpeg">
@@ -28,11 +25,12 @@
         <a-asset-item id="trash-obj" src="assets/dechets/model.obj"></a-asset-item>
       </a-assets> 
 
+      <!-- cam -->
       <a-camera look-controls="pointerLockEnabled: true; touchEnabled: true;" position="0 1.6 0">
         <a-cursor color="red"></a-cursor>
       </a-camera>
 
-      <!-- grab -->
+      <!-- mains -->
       <a-entity id="leftHand" hand-tracking-controls="hand: left;" hand-tracking-grab-controls="hand: left;" hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc"></a-entity>
       <a-entity id="rightHand" hand-tracking-controls="hand: right;" hand-tracking-grab-controls="hand: right;" hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc"></a-entity>
 
@@ -47,12 +45,13 @@
       <a-entity id="grass" position="-15.16327 0.5 17.18605" obj-model="obj: #grass-obj; mtl: #grass-mtl"></a-entity> 
       <a-entity id="grass1" position="-10.39365 0.5 -16.02199" obj-model="obj: #grass-obj; mtl: #grass-mtl"></a-entity> 
 
-      <!-- <a-entity id="environment" environment="groundColor: #1a512e; groundColor2: #1a512e;" scale="0.3 0.3 0.3"></a-entity> -->
+      <!-- base île -->
       <a-cylinder position="0 -9.80276 0" id="ground" scale="50 1 50" geometry="segmentsHeight: 18; thetaLength: 360; height: 20" material="color: #1a512e;"></a-cylinder>
       <a-cylinder position="0 -17.15899 0" id="ground1" scale="100 1 100" geometry="segmentsHeight: 18; thetaLength: 360; height: 5" material="color: #6c5528;"></a-cylinder>
-      <!-- <a-box position="0 -4.06096 0" id="ground" geometry="depth: 8.5" material="color: #1a512e" height="50" width="50" rotation="-90 0 0"></a-box> -->
+
       <a-entity id="ocean" visible="true" position="0 -0.20238 0" ocean="density: 30; width: 200; depth: 200; speed: 4; opacity: 1.70" material="color: #4291a9; opacity: 0.83; metalness: 0; roughness: 1;" rotation="-90 0 0"></a-entity>
-      <a-sky id="sky" src="#sky-img"></a-sky>
+
+      <a-sky id="sky" src="#sky-img" radius="100"></a-sky>
 
       <a-entity grabbable id="trash" position="0 0.3 -5" obj-model="obj: #trash-obj; mtl: #trash-mtl" scale="3 3 3"></a-entity>
 
