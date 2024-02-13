@@ -19,6 +19,8 @@
 
         <a-asset-item id="bush-glb" src="assets/buisson/Bushes.glb"></a-asset-item>
 
+        <img id="sky-img" src="assets/sky/gradient.jpeg">
+
         <a-asset-item id="ivory_palm-mtl" src="assets/ivory cane palm tree/IvoryCanePalmTree.mtl"></a-asset-item>
         <a-asset-item id="ivory_palm-obj" src="assets/ivory cane palm tree/IvoryCanePalmTree.obj"></a-asset-item>
 
@@ -50,6 +52,7 @@
       <a-cylinder position="0 -17.15899 0" id="ground1" scale="100 1 100" geometry="segmentsHeight: 18; thetaLength: 360; height: 5" material="color: #6c5528;"></a-cylinder>
       <!-- <a-box position="0 -4.06096 0" id="ground" geometry="depth: 8.5" material="color: #1a512e" height="50" width="50" rotation="-90 0 0"></a-box> -->
       <a-entity id="ocean" visible="true" position="0 -0.20238 0" ocean="density: 30; width: 200; depth: 200; speed: 4; opacity: 1.70" material="color: #4291a9; opacity: 0.83; metalness: 0; roughness: 1;" rotation="-90 0 0"></a-entity>
+      <a-sky id="sky" src="#sky-img"></a-sky>
 
       <a-entity grabbable id="trash" position="0 0.3 -5" obj-model="obj: #trash-obj; mtl: #trash-mtl" scale="3 3 3"></a-entity>
 
