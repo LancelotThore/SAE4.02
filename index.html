@@ -3,9 +3,10 @@
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@d5f3f8/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.2/dist/aframe-physics-system.js"></script>
   </head>
   <body>
-    <a-scene physics="debug: true" obb-collider="showColliders: false" xr-webgl="optionalFeatures: hand-tracking">
+    <a-scene physics="" obb-collider="showColliders: false" xr-webgl="optionalFeatures: hand-tracking">
 
       <a-assets>
         <a-asset-item id="queen_palm-obj" src="./assets/palmier/QueenPalmTree.obj"></a-asset-item>
@@ -64,7 +65,7 @@
         </a-entity>
         <a-entity id="Rock2">
           <a-entity id="rock2" scale="6 6 6" position="16.58632 1.05066 -25.89407" obj-model="obj: #rock2-obj; mtl: #rock2-mtl"></a-entity> 
-          <a-entity id="rock2_1" scale="2000 20000 2000" position="36.82826 0.5 -16.02199" obj-model="obj: #rock2-obj; mtl: #rock2-mtl"></a-entity>
+          <a-entity id="rock2_1" scale="5 5 5" position="-37.66969 4.54317 -15.44926" obj-model="obj: #rock2-obj; mtl: #rock2-mtl"></a-entity>
         </a-entity>
         <a-entity id="Rock3">
           <a-entity id="rock3" rotation="0 51.15 0" scale="50 50 50" position="2.17759 0.5 30.07414" obj-model="obj: #rock3-obj; mtl: #rock3-mtl"></a-entity> 
@@ -78,8 +79,8 @@
       </a-entity>
 
       <!-- base île -->
-      <a-cylinder position="0 -9.803 0" id="ground" scale="50 1 50" geometry="segmentsHeight: 18; thetaLength: 360; height: 20" material="color: #1a512e;"></a-cylinder>
-      <a-cylinder position="0 -17.15899 0" id="ground1" scale="100 1 100" geometry="segmentsHeight: 18; thetaLength: 360; height: 5" material="color: #6c5528;"></a-cylinder>
+      <a-cylinder static-body position="0 -9.803 0" id="ground" height="20" radius="50" color="#1a512e"></a-cylinder>
+      <a-cylinder static-body position="0 -17.15899 0" id="ground1" height="5" radius="100" color="#6c5528"></a-cylinder>
 
       <a-entity id="ocean" visible="true" position="0 -0.20238 0" ocean="density: 30; width: 200; depth: 200; speed: 4; opacity: 1.70" material="color: #4291a9; opacity: 0.83; metalness: 0; roughness: 1;" rotation="-90 0 0"></a-entity>
 
@@ -87,7 +88,7 @@
 
       <a-entity grabbable id="trash" position="0 0.3 -5" obj-model="obj: #trash-obj; mtl: #trash-mtl" scale="3 3 3"></a-entity>
 
-      <a-box grabbable position="0 1 -1"></a-box>
+      <a-box dynamic-body position="0 4 -2"></a-box>
 
       </a-scene>
  
