@@ -13,7 +13,7 @@
 
 <body>
 
-  <a-scene physics="debug: true" obb-collider="showColliders: true" xr-webgl="optionalFeatures: hand-tracking">
+  <a-scene physics="debug: true; gravity: -9.8" obb-collider="showColliders: true" xr-webgl="optionalFeatures: hand-tracking">
 
     <a-assets>
       <a-asset-item id="queen_palm-obj" src="./assets/palmier/QueenPalmTree.obj"></a-asset-item>
@@ -40,9 +40,10 @@
     </a-assets>
 
     <!-- cam -->
-    <a-camera look-controls="pointerLockEnabled: true; touchEnabled: true;" position="0 16 0" height="1">
+    <a-camera kinematic-body look-controls="pointerLockEnabled: true; touchEnabled: true;" position="0 1.6 0">
       <a-cursor color="red"></a-cursor>
-    </a-camera>
+    </a-camera>    
+    
 
     <!-- mains -->
     <a-entity id="leftHand" hand-tracking-controls="hand: left;" hand-tracking-grab-controls="hand: left;"
@@ -101,14 +102,15 @@
 
     <!-- base île -->
     <a-cylinder static-body id="ground" position="0 -9.803 0" height="20" radius="50" color="#1a512e"></a-cylinder>
-    <a-cylinder static-body position="0 -17.15899 0" id="ground1" scale="100 1 100"
-      geometry="segmentsHeight: 18; thetaLength: 360; height: 5" material="color: #6c5528;"></a-cylinder>
+    <a-cylinder static-body position="0 -17.15899 0" id="ground1" height="5" radius="100" color="#6c5528"></a-cylinder>
 
     <a-entity id="ocean" visible="true" position="0 -0.20238 0"
       ocean="density: 30; width: 200; depth: 200; speed: 4; opacity: 1.70"
       material="color: #4291a9; opacity: 0.83; metalness: 0; roughness: 1;" rotation="-90 0 0"></a-entity>
 
     <a-sky id="sky" src="#sky-img" radius="100"></a-sky>
+
+    <a-box dynamic-body width="2" height="2" depth="2" position="0 3 -5"></a-box>
 
     <a-entity grabbable id="trash" position="0 0.3 -5" obj-model="obj: #trash-obj; mtl: #trash-mtl"
       scale="3 3 3"></a-entity>
