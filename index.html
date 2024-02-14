@@ -8,6 +8,7 @@
   <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.2/dist/aframe-physics-system.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@fb96ab2/dist/aframe-extras.js"></script>
+  <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
   <title>SAE 402</title>
 </head>
 
@@ -113,7 +114,7 @@
     <a-box dynamic-body width="2" height="2" depth="2" position="0 3 -5"></a-box>
 
     <a-entity grabbable id="trash" position="0 0.3 -5" obj-model="obj: #trash-obj; mtl: #trash-mtl"
-      scale="3 3 3"></a-entity>
+      scale="3 3 3" event-set__down="_event: mousedown; visible: false"></a-entity>
 
   </a-scene>
 
