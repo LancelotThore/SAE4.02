@@ -31,6 +31,8 @@
 
       <a-asset-item id="bush-glb" src="assets/buisson/Bushes.glb"></a-asset-item>
 
+      <audio id="seaofthieves" src="Becalmed - Official Sea of Thieves Music Video.mp3" preload="auto"></audio>
+
       <img id="sky-img" src="assets/sky/gradient.jpeg">
 
       <a-asset-item id="ivory_palm-mtl" src="assets/ivory cane palm tree/IvoryCanePalmTree.mtl"></a-asset-item>
@@ -41,7 +43,8 @@
     </a-assets>
 
     <!-- cam -->
-    <a-camera look-controls="pointerLockEnabled: true; touchEnabled: true;" position="0 1.6 0" height="1">
+    <a-camera collider-check raycaster="objects: .collidable; showLine:true;"
+      look-controls="pointerLockEnabled: true; touchEnabled: true;" position="0 1.6 0" height="1">
       <a-cursor color="red"></a-cursor>
     </a-camera>
 
@@ -109,10 +112,16 @@
       ocean="density: 30; width: 200; depth: 200; speed: 4; opacity: 1.70"
       material="color: #4291a9; opacity: 0.83; metalness: 0; roughness: 1;" rotation="-90 0 0"></a-entity>
 
-    <a-sky id="sky" src="#sky-img" radius="100"></a-sky>
+    <a-sky id="sky" src="#sky-img" radius="100" sound="src: #seaofthieves"></a-sky>
 
-    <a-entity grabbable id="trash" position="0 0.3 -5" obj-model="obj: #trash-obj; mtl: #trash-mtl"
+    <a-entity grabbable class="collidable" id="trash" position="0 0.3 -5" obj-model="obj: #trash-obj; mtl: #trash-mtl"
       scale="3 3 3" event-set__down="_event: mousedown; visible: false"></a-entity>
+
+    <a-entity text="value: Hello World;" position="0 1 0"></a-entity>
+
+    <a-entity sound="src: #seaofthieves"></a-entity>
+
+    <a-ring color="transparent" radius-inner="1" radius-outer="2" scale="50 50 50" rotation="-90 0 0" position="0 1 0" ></a-ring>
 
   </a-scene>
 
