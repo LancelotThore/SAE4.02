@@ -5,7 +5,7 @@
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@d5f3f8/dist/aframe-extras.min.js"></script>
   </head>
   <body>
-    <a-scene obb-collider="showColliders: false" xr-webgl="optionalFeatures: hand-tracking">
+    <a-scene physics="debug: true" obb-collider="showColliders: false" xr-webgl="optionalFeatures: hand-tracking">
 
       <a-assets>
         <a-asset-item id="queen_palm-obj" src="./assets/palmier/QueenPalmTree.obj"></a-asset-item>
@@ -33,12 +33,14 @@
 
       <!-- cam -->
       <a-camera look-controls="pointerLockEnabled: true; touchEnabled: true;" position="0 1.6 0">
-        <a-cursor color="red"></a-cursor>
+        <!-- <a-cursor color="red"></a-cursor> -->
       </a-camera>
 
+      <a-entity progressive-controls></a-entity>
+
       <!-- mains -->
-      <a-entity id="leftHand" hand-tracking-controls="hand: left;" hand-tracking-grab-controls="hand: left;" hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc"></a-entity>
-      <a-entity id="rightHand" hand-tracking-controls="hand: right;" hand-tracking-grab-controls="hand: right;" hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc"></a-entity>
+      <a-entity id="leftHand" vive-controls="hand: left" hand-tracking-controls="hand: left;" hand-tracking-grab-controls="hand: left;" hand-controls="hand: left; handModelStyle: lowPoly; color: #ffcccc"></a-entity>
+      <a-entity id="rightHand" vive-controls="hand: right" hand-tracking-controls="hand: right;" hand-tracking-grab-controls="hand: right;" hand-controls="hand: right; handModelStyle: lowPoly; color: #ffcccc"></a-entity>
 
       <!-- décor -->
       <a-entity id="QueenPalm">
@@ -84,6 +86,8 @@
       <a-sky id="sky" src="#sky-img" radius="100"></a-sky>
 
       <a-entity grabbable id="trash" position="0 0.3 -5" obj-model="obj: #trash-obj; mtl: #trash-mtl" scale="3 3 3"></a-entity>
+
+      <a-box grabbable position="0 1 -1"></a-box>
 
       </a-scene>
  
