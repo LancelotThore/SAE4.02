@@ -2,8 +2,9 @@
   <head>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@d5f3f8/dist/aframe-extras.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.2/dist/aframe-physics-system.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@fb96ab2/dist/aframe-extras.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
   </head>
   <body>
     <a-scene physics="" obb-collider="showColliders: false" xr-webgl="optionalFeatures: hand-tracking">
@@ -30,12 +31,16 @@
 
         <a-asset-item id="trash-mtl" src="assets/dechets/materials.mtl"></a-asset-item>
         <a-asset-item id="trash-obj" src="assets/dechets/model.obj"></a-asset-item>
+
+        <a-asset-item id="ship-glb" src="assets/bateau/Ship.glb"></a-asset-item>
       </a-assets> 
 
       <!-- cam -->
-      <a-camera look-controls="pointerLockEnabled: true; touchEnabled: true;" position="0 1.6 0">
-        <!-- <a-cursor color="red"></a-cursor> -->
-      </a-camera>
+      <a-entity movement-controls="" id="cam" rotation="" gamepad-controls="" trackpad-controls="" keyboard-controls="" touch-controls="">
+        <a-entity camera="" look-controls="pointerLockEnabled: true; touchEnabled: true;" position="0 1.6 0" rotation="">
+          <a-cursor color="red"></a-cursor>
+        </a-entity>
+      </a-entity>
 
       <a-entity progressive-controls></a-entity>
 
@@ -64,29 +69,27 @@
           <a-entity id="rock1_1" scale="4 4 4" position="-36.74141 0.5 4.23482" obj-model="obj: #rock1-obj; mtl: #rock1-mtl"></a-entity>
         </a-entity>
         <a-entity id="Rock2">
-          <a-entity id="rock2" scale="6 6 6" position="16.58632 1.05066 -25.89407" obj-model="obj: #rock2-obj; mtl: #rock2-mtl"></a-entity> 
+          <a-entity id="rock2" scale="20 20 20" position="20 0.5 -132.9" obj-model="obj: #rock2-obj; mtl: #rock2-mtl"></a-entity> 
           <a-entity id="rock2_1" scale="5 5 5" position="-37.66969 4.54317 -15.44926" obj-model="obj: #rock2-obj; mtl: #rock2-mtl"></a-entity>
         </a-entity>
         <a-entity id="Rock3">
           <a-entity id="rock3" rotation="0 51.15 0" scale="50 50 50" position="2.17759 0.5 30.07414" obj-model="obj: #rock3-obj; mtl: #rock3-mtl"></a-entity> 
-          <a-entity id="rock3_1" scale="12 12 12" position="18.821 0.5 -16.02199" obj-model="obj: #rock3-obj; mtl: #rock3-mtl"></a-entity>
+          <a-entity id="rock3_1" scale="12 12 12" position="18.821 0.5 -16.02199" obj-model="obj: #rock3-obj; mtl: #rock3-mtl"></a-entity> 
+          <a-entity id="rock3_2" scale="82 82 82" position="-16 -7 -120.9" obj-model="obj: #rock3-obj; mtl: #rock3-mtl"></a-entity>
         </a-entity>
       </a-entity>
 
-      <a-entity id="Grass">
-        <a-entity id="grass" position="-15.16327 0.5 17.18605" obj-model="obj: #grass-obj; mtl: #grass-mtl"></a-entity> 
-        <a-entity id="grass1" position="-10.39365 0.5 -16.02199" obj-model="obj: #grass-obj; mtl: #grass-mtl"></a-entity>
-      </a-entity>
+      <a-entity id="ship" position="0.626 0.5 -132.9" rotation="135 -45 -20" scale="2 2 2" gltf-model="#ship-glb"></a-entity>
 
       <!-- base île -->
       <a-cylinder static-body position="0 -9.803 0" id="ground" height="20" radius="50" color="#1a512e"></a-cylinder>
-      <a-cylinder static-body position="0 -17.15899 0" id="ground1" height="5" radius="100" color="#6c5528"></a-cylinder>
+      <a-cone static-body position="0 -2.35 0" id="beach" height="5" radius-top="50" radius-bottom="150" color="#bc984b"></a-cone>
 
-      <a-entity id="ocean" visible="true" position="0 -0.20238 0" ocean="density: 30; width: 200; depth: 200; speed: 4; opacity: 1.70" material="color: #4291a9; opacity: 0.83; metalness: 0; roughness: 1;" rotation="-90 0 0"></a-entity>
+      <a-entity id="ocean" visible="true" position="0 -0.5 0" ocean="density: 30; width: 300; depth: 300; speed: 4; opacity: 1.70" material="color: #4291a9; opacity: 0.83; metalness: 0; roughness: 1;" rotation="-90 0 0"></a-entity>
 
-      <a-sky id="sky" src="#sky-img" radius="100"></a-sky>
+      <a-sky id="sky" src="#sky-img" radius="150"></a-sky>
 
-      <a-entity grabbable id="trash" position="0 0.3 -5" obj-model="obj: #trash-obj; mtl: #trash-mtl" scale="3 3 3"></a-entity>
+      <a-entity grabbable id="trash" position="0 0.3 -5" obj-model="obj: #trash-obj; mtl: #trash-mtl" scale="3 3 3" event-set__down="_event: mousedown; visible: false"></a-entity>
 
       <a-box dynamic-body position="0 4 -2"></a-box>
 
