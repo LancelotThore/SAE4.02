@@ -7,7 +7,7 @@
     <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
   </head>
   <body>
-    <a-scene physics="" obb-collider="showColliders: false" xr-webgl="optionalFeatures: hand-tracking">
+    <a-scene physics="debug: true; gravity: -9.8" obb-collider="showColliders: false" xr-webgl="optionalFeatures: hand-tracking">
 
       <a-assets>
         <a-asset-item id="queen_palm-obj" src="./assets/palmier/QueenPalmTree.obj"></a-asset-item>
@@ -21,6 +21,9 @@
 
         <a-asset-item id="rock3-obj" src="assets/rochers/rocher 3/model.obj"></a-asset-item>
         <a-asset-item id="rock3-mtl" src="assets/rochers/rocher 3/materials.mtl"></a-asset-item>
+
+        <a-asset-item id="pirate-obj" src="assets/pirate/Pirate.obj"></a-asset-item>
+        <a-asset-item id="pirate-mtl" src="assets/pirate/Pirate.mtl"></a-asset-item>
 
         <a-asset-item id="bush-glb" src="assets/buisson/Bushes.glb"></a-asset-item>
 
@@ -37,7 +40,7 @@
 
       <!-- cam -->
       <a-entity movement-controls="" id="cam" rotation="" gamepad-controls="" trackpad-controls="" keyboard-controls="" touch-controls="">
-        <a-entity camera="" look-controls="pointerLockEnabled: true; touchEnabled: true;" position="0 1.6 0" rotation="">
+        <a-entity kinematic-body camera="" look-controls="pointerLockEnabled: true; touchEnabled: true;" position="0 1.6 0" rotation="">
           <a-cursor color="red"></a-cursor>
         </a-entity>
       </a-entity>
@@ -80,11 +83,12 @@
       </a-entity>
 
       <a-entity id="ship" position="0.626 0.5 -132.9" rotation="135 -45 -20" scale="2 2 2" gltf-model="#ship-glb"></a-entity>
+      <a-entity id="#pirate" position="-2 0.2 -3" scale="0.12 0.12 0.12" obj-model="obj: #pirate-obj; mtl: #pirate-mtl"></a-entity>
 
       <!-- base île -->
       <a-cylinder static-body position="0 -9.803 0" id="ground" height="20" radius="50" color="#1a512e"></a-cylinder>
       <a-cone static-body position="0 -2.35 0" id="beach" height="5" radius-top="50" radius-bottom="150" color="#bc984b"></a-cone>
-
+      <!-- <a-sphere static-body visible="false" radius="65"></a-sphere> -->
       <a-entity id="ocean" visible="true" position="0 -0.5 0" ocean="density: 30; width: 300; depth: 300; speed: 4; opacity: 1.70" material="color: #4291a9; opacity: 0.83; metalness: 0; roughness: 1;" rotation="-90 0 0"></a-entity>
 
       <a-sky id="sky" src="#sky-img" radius="150"></a-sky>
