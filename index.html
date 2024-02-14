@@ -8,12 +8,13 @@
   <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.2/dist/aframe-physics-system.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@fb96ab2/dist/aframe-extras.js"></script>
+  <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
   <title>SAE 402</title>
 </head>
 
 <body>
 
-  <a-scene physics="debug: true" obb-collider="showColliders: true" xr-webgl="optionalFeatures: hand-tracking">
+  <a-scene physics="debug: true" obb-collider="showColliders: false" xr-webgl="optionalFeatures: hand-tracking">
 
     <a-assets>
       <a-asset-item id="queen_palm-obj" src="./assets/palmier/QueenPalmTree.obj"></a-asset-item>
@@ -40,7 +41,7 @@
     </a-assets>
 
     <!-- cam -->
-    <a-camera look-controls="pointerLockEnabled: true; touchEnabled: true;" position="0 16 0" height="1">
+    <a-camera look-controls="pointerLockEnabled: true; touchEnabled: true;" position="0 1.6 0" height="1">
       <a-cursor color="red"></a-cursor>
     </a-camera>
 
@@ -111,7 +112,7 @@
     <a-sky id="sky" src="#sky-img" radius="100"></a-sky>
 
     <a-entity grabbable id="trash" position="0 0.3 -5" obj-model="obj: #trash-obj; mtl: #trash-mtl"
-      scale="3 3 3"></a-entity>
+      scale="3 3 3" event-set__down="_event: mousedown; visible: false"></a-entity>
 
   </a-scene>
 
