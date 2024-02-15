@@ -43,7 +43,7 @@
       </a-assets> 
 
       <!-- cam -->
-      <a-entity movement-controls="" id="cam" rotation="" gamepad-controls="" trackpad-controls="" keyboard-controls="" touch-controls="">
+      <a-entity movement-controls="" jump-ability id="cam" rotation="" gamepad-controls="" trackpad-controls="" keyboard-controls="" touch-controls="" position="0 1.6 0">
         <a-camera kinematic-body look-controls="pointerLockEnabled: true; touchEnabled: true;" position="0 1.6 0">
           <a-cursor color="red"></a-cursor>
         </a-camera>
@@ -98,7 +98,10 @@
 
       <a-entity grabbable id="trash" position="0 0.3 -5" obj-model="obj: #trash-obj; mtl: #trash-mtl" scale="3 3 3" event-set__down="_event: mousedown; visible: false"></a-entity>
 
-      <a-box dynamic-body position="0 4 -2"></a-box>
+      <a-box dynamic-body position="0 4 -2" height="4"></a-box>
+
+      <a-entity gltf-model="#ship-glb" position="0 0 -7" body="type: static; shape: none;" shapemain="shape: box; height: 5; radiusTop: 5; radiusBottom: 5;" shapehandle="shape: box; halfExtents: 5 5 5; offset: 5 5 5;">></a-entity> 
+
 
       </a-scene>
  
