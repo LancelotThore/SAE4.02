@@ -40,12 +40,14 @@
         <a-asset-item id="trash-obj" src="assets/dechets/model.obj"></a-asset-item>
 
         <a-asset-item id="ship-glb" src="assets/bateau/Ship.glb"></a-asset-item>
+
+        <a-asset-item id="perso-glb" src="assets/perso/Adventurer.glb"></a-asset-item>
       </a-assets> 
 
       <!-- cam -->
-      <a-entity movement-controls="" id="cam" rotation="" gamepad-controls="" trackpad-controls="" keyboard-controls="" touch-controls="">
-        <a-camera kinematic-body look-controls="pointerLockEnabled: true; touchEnabled: true;" position="0 1.6 0">
-          <a-cursor color="red"></a-cursor>
+      <a-entity movement-controls="" universal-controls="" position="0 1.6 0" id="cam" rotation=""  gamepad-controls="" trackpad-controls="" keyboard-controls="" touch-controls="">
+        <a-camera kinematic-body universal-controls="" look-controls="pointerLockEnabled: true; touchEnabled: true;" position="0 0 0">
+          <a-cursor color="red" rayOrigin="mouse"></a-cursor>
         </a-camera>
       </a-entity>
 
@@ -96,16 +98,18 @@
 
       <a-sky id="sky" src="#sky-img" radius="150"></a-sky>
 
-      <a-entity grabbable id="trash" position="0 0.3 -5" obj-model="obj: #trash-obj; mtl: #trash-mtl" scale="3 3 3" event-set__down="_event: mousedown; visible: false"></a-entity>
+      <a-entity grabbable class="trash" id="trash" position="0 0.3 -5" obj-model="obj: #trash-obj; mtl: #trash-mtl" scale="3 3 3" event-set__down="_event: mousedown; visible: false"></a-entity>
 
-      <a-torus static-body radius="65" position="0 1.6 0" rotation="-90 0 0"></a-torus>
+      <a-box  static-body position="0 0 -75"></a-box>
 
-      <a-box dynamic-body position="0 4 -2"></a-box>
+      <a-box dynamic-body position="0 0 -2"></a-box>
+
+      <a-entity id="Adventurer" scale="" position="0 0.2 3" gltf-model="#perso-glb" animation-mixer></a-entity>
 
 
       </a-scene>
  
-    <script src="script.js"></script>
+    <script src=""></script>
 
   </body>
 </html>
