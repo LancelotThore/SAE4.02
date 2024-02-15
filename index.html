@@ -14,11 +14,11 @@
 
 <body>
 
-  <a-scene physics="debug: true; gravity: -9.8" obb-collider="showColliders: false" xr-webgl="optionalFeatures: hand-tracking">
+  <a-scene physics="debug: false; gravity: -9.8" obb-collider="showColliders: false" xr-webgl="optionalFeatures: hand-tracking">
 
     <a-assets>
-        <a-asset-item id="queen_palm-obj" src="./assets/palmier/QueenPalmTree.obj"></a-asset-item>
-        <a-asset-item id="queen_palm-mtl" src="./assets/palmier/QueenPalmTree.mtl"></a-asset-item>
+        <a-asset-item id="queen_palm-obj" src="./assets/tree/QueenPalm/QueenPalmTree.obj"></a-asset-item>
+        <a-asset-item id="queen_palm-mtl" src="./assets/tree/QueenPalm/QueenPalmTree.mtl"></a-asset-item>
 
         <a-asset-item id="rock1-obj" src="assets/rochers/rocher 1/model.obj"></a-asset-item>
         <a-asset-item id="rock1-mtl" src="assets/rochers/rocher 1/materials.mtl"></a-asset-item>
@@ -29,22 +29,32 @@
         <a-asset-item id="rock3-obj" src="assets/rochers/rocher 3/model.obj"></a-asset-item>
         <a-asset-item id="rock3-mtl" src="assets/rochers/rocher 3/materials.mtl"></a-asset-item>
 
-        <a-asset-item id="bush-glb" src="assets/buisson/Bushes.glb"></a-asset-item>
+        <a-asset-item id="palm_tree-glb" src="assets/tree/PalmTree/Palm Tree.glb"></a-asset-item>
+
+        <a-asset-item id="grass1-glb" src="assets/herbe/herbe1/Grass.glb"></a-asset-item>
+        <!-- <a-asset-item id="grass2-glb" src="assets/herbe/herbe2/Grass.glb"></a-asset-item>
+        <a-asset-item id="grass3-glb" src="assets/herbe/herbe3/Grass.glb"></a-asset-item> -->
 
         <img id="sky-img" src="assets/sky/gradient.jpeg">
 
-        <a-asset-item id="ivory_palm-mtl" src="assets/ivory cane palm tree/IvoryCanePalmTree.mtl"></a-asset-item>
-        <a-asset-item id="ivory_palm-obj" src="assets/ivory cane palm tree/IvoryCanePalmTree.obj"></a-asset-item>
+        <a-asset-item id="ivory_palm-obj" src="assets/tree/IvoryPalm/IvoryCanePalmTree.obj"></a-asset-item>
+        <a-asset-item id="ivory_palm-mtl" src="assets/tree/IvoryPalm/IvoryCanePalmTree.mtl"></a-asset-item>
 
-        <a-asset-item id="trash-mtl" src="assets/dechets/materials.mtl"></a-asset-item>
-        <a-asset-item id="trash-obj" src="assets/dechets/model.obj"></a-asset-item>
+        <a-asset-item id="trash-mtl" src="assets/dechets/trashBag/materials.mtl"></a-asset-item>
+        <a-asset-item id="trash-obj" src="assets/dechets/trashBag/model.obj"></a-asset-item>
+
+        <a-asset-item id="soda_can_1-glb" src="assets/dechets/can/SodaCan1.glb"></a-asset-item>
+
+        <a-asset-item id="soda_can_2-glb" src="assets/dechets/can/SodaCan2.glb"></a-asset-item>
 
         <a-asset-item id="ship-glb" src="assets/bateau/Ship.glb"></a-asset-item>
+
+        <a-asset-item id="perso-glb" src="assets/PNJ/Adventurer.glb"></a-asset-item>
       </a-assets> 
 
       <!-- cam -->
-      <a-entity movement-controls="" jump-ability id="cam" rotation="" gamepad-controls="" trackpad-controls="" keyboard-controls="" touch-controls="" position="0 1.6 0">
-        <a-camera kinematic-body look-controls="pointerLockEnabled: true; touchEnabled: true;" position="0 1.6 0">
+      <a-entity movement-controls="" id="cam" gamepad-controls="" trackpad-controls="" keyboard-controls="" touch-controls="" position="0 1.6 0">
+        <a-camera kinematic-body look-controls="pointerLockEnabled: true; touchEnabled: true;" position="0 0 0">
           <a-cursor color="red"></a-cursor>
         </a-camera>
       </a-entity>
@@ -57,51 +67,87 @@
 
       <!-- décor -->
       <a-entity id="QueenPalm">
-        <a-entity id="queen_palm" scale="1.3 1.3 1.3" position="24.81855 0 13.97321" obj-model="obj: #queen_palm-obj; mtl: #queen_palm-mtl"></a-entity>
-        <a-entity id="queen_palm1" position="4.03938 0 -6.58606" obj-model="obj: #queen_palm-obj; mtl: #queen_palm-mtl"></a-entity> 
-        <a-entity id="queen_palm2" scale="1.5 1.5 1.5" position="-23.16864 0 1" obj-model="obj: #queen_palm-obj; mtl: #queen_palm-mtl"></a-entity> 
+        <a-entity id="queen_palm" scale="1.3 1.3 1.3" position="14.7902 0 13.97321" obj-model="obj: #queen_palm-obj; mtl: #queen_palm-mtl"></a-entity>
+        <a-entity id="queen_palm1" position="10.1741 0 -17.82218" obj-model="obj: #queen_palm-obj; mtl: #queen_palm-mtl"></a-entity> 
+        <a-entity id="queen_palm2" scale="1.5 1.5 1.5" position="-23.16864 0 6.98908" obj-model="obj: #queen_palm-obj; mtl: #queen_palm-mtl"></a-entity> 
       </a-entity>
       
       <a-entity id="IvoryPalm">
-        <a-entity id="ivory_palm" position="-15.16327 0 17.18605" obj-model="obj: #ivory_palm-obj; mtl: #ivory_palm-mtl"></a-entity> 
+        <a-entity id="ivory_palm" position="44.96731 0 -7.0884" obj-model="obj: #ivory_palm-obj; mtl: #ivory_palm-mtl"></a-entity> 
         <a-entity id="ivory_palm1" scale="1.4 1.4 1.4" position="-10.39365 0 -31.79966" obj-model="obj: #ivory_palm-obj; mtl: #ivory_palm-mtl"></a-entity> 
-        <a-entity id="ivory_palm1" scale="1.3 1.3 1.3" position="-14 0 -25" obj-model="obj: #ivory_palm-obj; mtl: #ivory_palm-mtl"></a-entity> 
-        <a-entity id="ivory_palm1" scale="1.5 1.5 1.5" position="-6 0 -27.966" obj-model="obj: #ivory_palm-obj; mtl: #ivory_palm-mtl"></a-entity> 
-        <a-entity id="ivory_palm1" scale="1.4 1.4 1.4" position="-12 0 -27" obj-model="obj: #ivory_palm-obj; mtl: #ivory_palm-mtl"></a-entity> 
+        <a-entity id="ivory_palm2" scale="1.3 1.3 1.3" position="-14 0 -25" obj-model="obj: #ivory_palm-obj; mtl: #ivory_palm-mtl"></a-entity> 
+        <a-entity id="ivory_palm3" scale="1.5 1.5 1.5" position="-6 0 -27.966" obj-model="obj: #ivory_palm-obj; mtl: #ivory_palm-mtl"></a-entity> 
+        <a-entity id="ivory_palm4" scale="1.4 1.4 1.4" position="-12 0 -27" obj-model="obj: #ivory_palm-obj; mtl: #ivory_palm-mtl"></a-entity> 
+      </a-entity>
+
+      <a-entity id="PalmTree">
+        <a-entity id="palm_tree" rotation="0 29.999999999999996 -70" position="32.33724 0 -31.94607" scale="0.7 0.7 0.7" gltf-model="#palm_tree-glb"></a-entity> 
+        <a-entity id="palm_tree1" position="-45.13923 0 17.18605" scale="0.7 0.7 0.7" gltf-model="#palm_tree-glb"></a-entity> 
+        <a-entity id="palm_tree2" rotation="0 -57 0" position="40.80862 0 23.0316" scale="0.7 0.7 0.7" gltf-model="#palm_tree-glb"></a-entity> 
+        <a-entity id="palm_tree3" rotation="0 42 0" position="-30.60116 0 -34.51994" scale="0.7 0.7 0.7" gltf-model="#palm_tree-glb"></a-entity> 
+        <a-entity id="palm_tree4" rotation="0 125.00000000000001 -30" position="-6.77705 0 39.62949" scale="0.7 0.7 0.7" gltf-model="#palm_tree-glb"></a-entity> 
       </a-entity>
 
       <a-entity id="Rock">
         <a-entity id="Rock1">
-          <a-entity id="rock1" scale="2 2 2" position="-34.38879 0.5 -1.7115" obj-model="obj: #rock1-obj; mtl: #rock1-mtl"></a-entity> 
-          <a-entity id="rock1_1" scale="4 4 4" position="-36.74141 0.5 4.23482" obj-model="obj: #rock1-obj; mtl: #rock1-mtl"></a-entity>
+          <a-entity id="rock1" scale="4 4 4" position="-36.74141 0.5 4.23482" obj-model="obj: #rock1-obj; mtl: #rock1-mtl"></a-entity>
+          <a-entity id="rock1_1" scale="8 8 8" position="45.07523 -0.4344 94.91012" obj-model="obj: #rock1-obj; mtl: #rock1-mtl"></a-entity>
         </a-entity>
         <a-entity id="Rock2">
-          <a-entity id="rock2" scale="20 20 20" position="20 0.5 -132.9" obj-model="obj: #rock2-obj; mtl: #rock2-mtl"></a-entity> 
+          <a-entity id="rock2" scale="20 20 20" position="26.54613 6.15149 -132.9" obj-model="obj: #rock2-obj; mtl: #rock2-mtl"></a-entity> 
           <a-entity id="rock2_1" scale="5 5 5" position="-37.66969 4.54317 -15.44926" obj-model="obj: #rock2-obj; mtl: #rock2-mtl"></a-entity>
+          <a-entity id="rock2_3" scale="15 15 15" position="-132.69728 -0.05006 0" obj-model="obj: #rock2-obj; mtl: #rock2-mtl"></a-entity>
+          <a-entity id="rock2_4" scale="8 8 8" position="58.80122 3.59799 81.28569" obj-model="obj: #rock2-obj; mtl: #rock2-mtl"></a-entity>
         </a-entity>
         <a-entity id="Rock3">
           <a-entity id="rock3" rotation="0 51.15 0" scale="50 50 50" position="2.17759 0.5 30.07414" obj-model="obj: #rock3-obj; mtl: #rock3-mtl"></a-entity> 
+          <a-entity id="rock3" rotation="0 51.15 0" scale="50 50 50" position="2.17759 0.5 30.07414" obj-model="obj: #rock3-obj; mtl: #rock3-mtl"></a-entity> 
           <a-entity id="rock3_1" scale="12 12 12" position="18.821 0.5 -16.02199" obj-model="obj: #rock3-obj; mtl: #rock3-mtl"></a-entity> 
-          <a-entity id="rock3_2" scale="82 82 82" position="-16 -7 -120.9" obj-model="obj: #rock3-obj; mtl: #rock3-mtl"></a-entity>
+          <a-entity id="rock3_2" rotation="0 80 0" scale="69 69 69" position="-23.46331 0 -119.25869" obj-model="obj: #rock3-obj; mtl: #rock3-mtl"></a-entity>
+          <a-entity id="rock3_3" scale="82 82 82" position="120.38735 -1.2853 0" obj-model="obj: #rock3-obj; mtl: #rock3-mtl"></a-entity>
+          <a-entity id="rock3_4" scale="46 46 46" position="-80.34166 -2.77767 93.40849" obj-model="obj: #rock3-obj; mtl: #rock3-mtl"></a-entity>
         </a-entity>
       </a-entity>
+
+      <a-entity id="Grass">
+        <a-entity id="Grass1">
+          <a-entity id="grass1" scale="4 4 4" position="17.43855 0.14 6.10696" gltf-model="#grass1-glb"></a-entity> 
+          <a-entity id="grass1_1" scale="4 4 4" position="-4.75084 0.14 -18.58987" gltf-model="#grass1-glb"></a-entity> 
+          <a-entity id="grass1_2" scale="4 4 4" position="-39.2226 0.14 11.92644" gltf-model="#grass1-glb"></a-entity> 
+          <a-entity id="grass1_3" scale="4 4 4" position="-7.23579 0.14 39.48367" gltf-model="#grass1-glb"></a-entity> 
+          <a-entity id="grass1_4" scale="4 4 4" position="27.86683 0.14 28.77178" gltf-model="#grass1-glb"></a-entity> 
+          <a-entity id="grass1_5" scale="4 4 4" position="41.5848 0.14 7.1594" gltf-model="#grass1-glb"></a-entity> 
+          <a-entity id="grass1_6" scale="4 4 4" position="-30.62619 0.14 33.95768" gltf-model="#grass1-glb"></a-entity> 
+          <a-entity id="grass1_7" scale="4 4 4" position="-24.84465 0.14 -30.23158" gltf-model="#grass1-glb"></a-entity> 
+          <a-entity id="grass1_8" scale="4 4 4" position="4.62043 0.14 -40.5847" gltf-model="#grass1-glb"></a-entity> 
+          <a-entity id="grass1_9" scale="4 4 4" position="-12.29985 0.14 2.86133" gltf-model="#grass1-glb"></a-entity> 
+          <a-entity id="grass1_10" scale="4 4 4" position="38.20617 0.14 -12.96901" gltf-model="#grass1-glb"></a-entity> 
+          <a-entity id="grass1_11" scale="4 4 4" position="11.73419 0.14 43.80881" gltf-model="#grass1-glb"></a-entity> 
+          <a-entity id="grass1_12" scale="4 4 4" position="7.08072 0.14 -4.4447" gltf-model="#grass1-glb"></a-entity> 
+          <a-entity id="grass1_13" scale="4 4 4" position="-31.83756 0.14 -10.2494" gltf-model="#grass1-glb"></a-entity> 
+          <a-entity id="grass1_14" scale="4 4 4" position="25.94635 0.14 -33.66793" gltf-model="#grass1-glb"></a-entity> 
+          <a-entity id="grass1_15" scale="4 4 4" position="-13.858 0.14 22.61269" gltf-model="#grass1-glb"></a-entity> 
+        </a-entity>
+      </a-entity>
+
+      <a-entity id="adventurer" scale="1.05 1.05 1.05" position="0 0.2 -3" gltf-model="#perso-glb"></a-entity>
 
       <a-entity id="ship" position="0.626 0.5 -132.9" rotation="135 -45 -20" scale="2 2 2" gltf-model="#ship-glb"></a-entity>
 
       <!-- base île -->
-      <a-cylinder static-body id="ground" position="0 -9.803 0" height="20" radius="50" color="#1a512e"></a-cylinder>
-      <a-cone static-body position="0 -2.35 0" id="beach" height="5" radius-top="50" radius-bottom="150" color="#bc984b"></a-cone>
+      <a-cylinder static-body id="ground" static-body="sphereRadius: NaN" position="0 -9.803 0" height="20" radius="50" color="#1a512e"></a-cylinder>
+      <a-cone static-body position="0 -2.35 0" id="beach" static-body="sphereRadius: NaN" height="5" radius-top="50" radius-bottom="150" color="#bc984b"></a-cone>
 
       <a-entity id="ocean" visible="true" position="0 -0.5 0" ocean="density: 30; width: 300; depth: 300; speed: 4; opacity: 1.70" material="color: #4291a9; opacity: 0.83; metalness: 0; roughness: 1;" rotation="-90 0 0"></a-entity>
 
       <a-sky id="sky" src="#sky-img" radius="150"></a-sky>
 
-      <a-entity grabbable id="trash" position="0 0.3 -5" obj-model="obj: #trash-obj; mtl: #trash-mtl" scale="3 3 3" event-set__down="_event: mousedown; visible: false"></a-entity>
+      <!-- déchets -->
+      <a-entity grabbable id="trash" position="-6.79519 0.3 30.95289" obj-model="obj: #trash-obj; mtl: #trash-mtl" scale="3 3 3" event-set__down="_event: mousedown; visible: false"></a-entity>
 
-      <a-box dynamic-body position="0 4 -2" height="4"></a-box>
+      <a-entity grabbable id="soda_can_1" position="0 0.3 -5" gltf-model="#soda_can_1" scale="3 3 3" event-set__down="_event: mousedown; visible: false"></a-entity>
 
-      <a-entity gltf-model="#ship-glb" position="0 0 -7" body="type: static; shape: none;" shapemain="shape: box; height: 5; radiusTop: 5; radiusBottom: 5;" shapehandle="shape: box; halfExtents: 5 5 5; offset: 5 5 5;">></a-entity> 
-
+      <a-entity grabbable id="soda_can_2" position="0 0.3 -5" gltf-model="#soda_can_2" scale="3 3 3" event-set__down="_event: mousedown; visible: false"></a-entity>
 
       </a-scene>
  
