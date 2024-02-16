@@ -32,8 +32,6 @@
         <a-asset-item id="palm_tree-glb" src="assets/tree/PalmTree/Palm Tree.glb"></a-asset-item>
 
         <a-asset-item id="grass1-glb" src="assets/herbe/herbe1/Grass.glb"></a-asset-item>
-        <!-- <a-asset-item id="grass2-glb" src="assets/herbe/herbe2/Grass.glb"></a-asset-item>
-        <a-asset-item id="grass3-glb" src="assets/herbe/herbe3/Grass.glb"></a-asset-item> -->
 
         <img id="sky-img" src="assets/sky/gradient.jpeg">
 
@@ -46,6 +44,8 @@
         <a-asset-item id="soda_can_1-glb" src="assets/dechets/can/SodaCan1.glb"></a-asset-item>
 
         <a-asset-item id="soda_can_2-glb" src="assets/dechets/can/SodaCan2.glb"></a-asset-item>
+
+        <a-asset-item id="toilet_paper-glb" src="assets/dechets/toiletPaper/Toilet paper.glb"></a-asset-item>
 
         <a-asset-item id="ship-glb" src="assets/bateau/Ship.glb"></a-asset-item>
 
@@ -145,9 +145,11 @@
       <!-- déchets -->
       <a-entity grabbable id="trash" position="-6.79519 0.3 30.95289" obj-model="obj: #trash-obj; mtl: #trash-mtl" scale="3 3 3" event-set__down="_event: mousedown; visible: false"></a-entity>
 
-      <a-entity grabbable id="soda_can_1" position="0 0.3 -5" gltf-model="#soda_can_1" scale="3 3 3" event-set__down="_event: mousedown; visible: false"></a-entity>
+      <a-entity grabbable id="soda_can_1" position="-5.69763 0.3 -27.90234" gltf-model="#soda_can_1-glb" scale="0.02 0.02 0.02" event-set__down="_event: mousedown; visible: false"></a-entity>
 
-      <a-entity grabbable id="soda_can_2" position="0 0.3 -5" gltf-model="#soda_can_2" scale="3 3 3" event-set__down="_event: mousedown; visible: false"></a-entity>
+      <a-entity grabbable id="soda_can_2" position="42.41604 0.3 7.08747" gltf-model="#soda_can_2-glb" scale="1.5 1.5 1.5" event-set__down="_event: mousedown; visible: false"></a-entity>
+
+      <a-entity grabbable id="toilet_paper" position="-40.32388 3.17703 -12.39722" gltf-model="#toilet_paper-glb" scale="0.2 0.2 0.2" event-set__down="_event: mousedown; visible: false"></a-entity>
 
       </a-scene>
  
