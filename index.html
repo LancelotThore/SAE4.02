@@ -42,6 +42,12 @@
         <a-asset-item id="ship-glb" src="assets/bateau/Ship.glb"></a-asset-item>
 
         <a-asset-item id="perso-glb" src="assets/perso/Adventurer.glb"></a-asset-item>
+
+        <a-asset-item id="firecamp" src="assets/feu de camp/Campfire.glb"></a-asset-item>
+
+        <a-asset-item id="perroquet" src="assets/perroquet/Macaw.glb"></a-asset-item>
+
+        <a-asset-item id="pancarte" src="assets/pancarte/Wooden Sign.glb"></a-asset-item>
       </a-assets> 
 
       <!-- cam -->
@@ -104,7 +110,13 @@
 
       <a-box dynamic-body position="0 0 -2"></a-box>
 
-      <a-entity id="Adventurer" scale="" position="0 0.2 3" gltf-model="#perso-glb" animation-mixer></a-entity>
+      <a-entity id="adventurer" scale="" position="0 0.2 3" gltf-model="#perso-glb" animation-mixer></a-entity>
+
+      <a-entity id="campfire" gltf-model="#firecamp" position="0 0.5 0"></a-entity>
+
+      <a-entity id="macaw" gltf-model="#perroquet" position="0 2.1 0" scale="0.1 0.1 0.1"></a-entity>
+
+      <a-entity id="sign" gltf-model="#pancarte" positioon="0 1 0"></a-entity>
 
 
       </a-scene>
