@@ -42,8 +42,6 @@
 
       <a-asset-item id="ship-glb" src="assets/bateau/Ship.glb"></a-asset-item>
 
-      <a-asset-item id="perso-glb" src="assets/perso/Adventurer.glb"></a-asset-item>
-
       <a-asset-item id="firecamp" src="assets/feu de camp/Campfire.glb"></a-asset-item>
 
       <a-asset-item id="perroquet" src="assets/perroquet/Macaw.glb"></a-asset-item>
@@ -56,7 +54,7 @@
       trackpad-controls="" keyboard-controls="" touch-controls="">
       <a-camera kinematic-body universal-controls="" look-controls="pointerLockEnabled: true; touchEnabled: true;"
         position="0 0 0">
-        <a-cursor color="red" rayOrigin="mouse"></a-cursor>
+        <a-cursor id="cursor" far="100" color="red" rayOrigin="mouse"></a-cursor>
       </a-camera>
     </a-entity>
 
@@ -132,24 +130,25 @@
     <a-sky id="sky" src="#sky-img" radius="150"></a-sky>
 
     <a-entity grabbable class="trash" id="trash" position="0 0.3 -5" obj-model="obj: #trash-obj; mtl: #trash-mtl"
-      scale="3 3 3" event-set__down="_event: mousedown; visible: false"></a-entity>
-
-    <a-box static-body position="0 0 -75"></a-box>
-
-    <a-box dynamic-body position="0 0 -2"></a-box>
-
-    <a-entity id="adventurer" scale="" position="0 0.2 3" gltf-model="#perso-glb" animation-mixer></a-entity>
+      scale="3 3 3" event-set__down="_event: mousedown; visible: false;"
+      event-set__enter="_event: mouseenter; _target: #cursor; color: yellow;"
+      event-set__leave="_event: mouseleave; _target: #cursor; color: red"></a-entity>
 
     <a-entity id="campfire" gltf-model="#firecamp" position="0 0.5 0"></a-entity>
 
-    <a-entity id="macaw" rotation="0 -90 0" gltf-model="#perroquet" position="-3.10917 2.16182 -5.69365"
-      scale="0.1 0.1 0.1"></a-entity>
+    <a-entity id="macaw" rotation="0 -90 0" gltf-model="#perroquet" position="-3.789 1.968 -6.565" scale="0.1 0.1 0.1"
+      event-set__mouseup1="_event: mouseup; _target: #tutoText; visible: true"
+      event-set__enter="_event: mouseenter; _target: #cursor; color: yellow"
+      event-set__mousedown="_event: mousedown; _target: #tutoText; visible: true"
+      event-set__mouseleave1="_event: mouseleave; _target: #tutoText; visible: false"
+      event-set__mouseleave2="_event: mouseleave; _target: #cursor; color: red">
+      <a-text id="tutoText" rotation="0 -90 0" value="Bonjour je suis le perroquet" color="#FFF" visible="false"
+        position="0.92066 5.95934 -12.27959" width="15" wrap-count="40"
+        geometry="primitive: plane; width: 10; height: 10;" material="color: #333"></a-text>
+    </a-entity>
 
     <a-entity id="sign" rotation="0 180 0" position="-3.724 0 -6.632" gltf-model="#pancarte"
       positioon="0 1 0"></a-entity>
-
-    <a-entity position="1 1 1" geometry="primitive: plane; width: 4; height: 0" material="color: white"
-      text="value: This text will be 4 units wide."></a-entity>
 
 
   </a-scene>
