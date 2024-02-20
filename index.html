@@ -49,6 +49,8 @@
 
       <a-asset-item id="toilet_paper-glb" src="assets/dechets/toiletPaper/Toilet paper.glb"></a-asset-item>
 
+      <a-asset-item id="plastic_bottle-glb" src="assets/dechets/PlasticBottle/Bottle (Plastic).glb"></a-asset-item>
+
       <a-asset-item id="ship-glb" src="assets/bateau/Ship.glb"></a-asset-item>
 
       <a-asset-item id="firecamp" src="assets/feu de camp/Campfire.glb"></a-asset-item>
@@ -222,19 +224,20 @@
 
     <a-entity id="macaw" rotation="0 -90 0" gltf-model="#perroquet" position="-2.535 1.968 -45.424" scale="0.1 0.1 0.1"
       event-set__mouseup1="_event: mouseup; _target: #tutoText; visible: true"
+      event-set__mouseup2="_event: mouseup; _target: #nameIsland; visible: false"
       event-set__enter="_event: mouseenter; _target: #cursor; color: yellow"
       event-set__mousedown="_event: mousedown; _target: #tutoText; visible: true"
-      event-set__mouseleave1="_event: mouseleave; _target: #tutoText; visible: false"
-      event-set__mouseleave2="_event: mouseleave; _target: #cursor; color: red">
-      <a-text id="tutoText" rotation="0 -90 0" value="Bonjour je suis le perroquet" color="#FFF" visible="false"
-        position="3.15314 5.95934 -12.27959" width="10" wrap-count="40"
-        geometry="primitive: plane; width: 10; height: 10;" material="color: #333"></a-text>
+      event-set__mouseleave="_event: mouseleave; _target: #cursor; color: red">
     </a-entity>
 
-    <a-text id="nameIsland" font="monoid" position="-1.88752 1.77991 -45.524" value="Las Cruzas" color="#000000"
+    <a-text id="tutoText" rotation="0 -180 0"
+      value="Bonjour je suis le perroquet, il faut que tu trouve les dechets caches sur cette ile ton curseur change de couleur quand tu regarde un dechets comme avec moi"
+      color="#000000" visible="false" position="-1.58934 1.75892 -45.54364" width="2" font="monoid"></a-text>
+
+    <a-text id="nameIsland" font="monoid" position="-1.87279 1.79616 -45.69774" value="las cruzas" color="#000000"
       width="5" rotation="0 -180 0"></a-text>
 
-    <a-entity id="sign" rotation="0 180 0" position="-2.47195 0 -45.49233" gltf-model="#pancarte"
+    <a-entity id="sign" scale="1.5 1 1" rotation="0 180 0" position="-2.472 0 -45.492" gltf-model="#pancarte"
       positioon="0 1 0"></a-entity>
 
     <!-- base Île -->
