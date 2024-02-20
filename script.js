@@ -4,7 +4,7 @@ function handlerScore(ev){
     if (ev.target.id.includes('object')){
         score+=1;
         for (let el of document.querySelectorAll('#score')){
-            el.setAttribute('text', {value: 'Dechets collectes : ' + score + '/4'});
+            el.setAttribute('text', {value: 'Dechets collectes : ' + score + '/5'});
         }
     }
     if (score == 4){
