@@ -224,7 +224,11 @@
 
     <a-entity id="campfire" gltf-model="#firecamp" position="0.04727 0.5 -39.50682"></a-entity>
 
-    <a-entity id="TurtleYellow" gltf-model="#turtle" scale="0.001 0.001 0.001" position="0.312 0.871 -19.91145"></a-entity>
+    <a-entity id="TurtleYellow" gltf-model="#turtle" scale="0.002 0.002 0.002" position="13.00238 0.2147 -54.65287"
+      event-set__enter="_event: mouseenter; _target: #cursor; color: yellow;"
+      event-set__leave="_event: mouseleave; _target: #cursor; color: red"
+      event-set__mouseup1="_event: mouseup; position: 13.00238 0.2147 -54.65287"
+      event-set__mousedown="_event: mousedown; position: 13.00238 0.5147 -54.65287"></a-entity>
 
     <a-entity id="macaw" rotation="0 -90 0" gltf-model="#perroquet" position="-2.535 1.968 -45.424" scale="0.1 0.1 0.1"
       event-set__mouseup1="_event: mouseup; _target: #tutoText; visible: true"
@@ -235,11 +239,11 @@
     </a-entity>
 
     <a-text id="tutoText" rotation="0 -180 0"
-      value="Bonjour je suis le perroquet, il faut que tu trouve les dechets caches sur cette ile ton curseur change de couleur quand tu regarde un dechets comme avec moi"
+      value="Bonjour je suis le perroquet, il faut que tu trouves les dechets caches sur cette ile ton curseur change de couleur quand tu regarde un dechets comme avec moi"
       color="#000000" visible="false" position="-1.58934 1.75892 -45.54364" width="2" font="monoid"></a-text>
 
-    <a-text id="nameIsland" font="monoid" position="-1.873 1.796 -45.53346" value="Las Cruzas" color="#000000"
-      width="5" rotation="0 -180 0"></a-text>
+    <a-text id="nameIsland" font="monoid" position="-1.873 1.796 -45.53346" value="Las Cruzas" color="#000000" width="5"
+      rotation="0 -180 0"></a-text>
 
     <a-entity id="sign" scale="1.5 1 1" rotation="0 180 0" position="-2.472 0 -45.492" gltf-model="#pancarte"
       positioon="0 1 0"></a-entity>
@@ -267,8 +271,8 @@
       event-set__enter="_event: mouseenter; _target: #cursor; color: yellow;"
       event-set__leave="_event: mouseleave; _target: #cursor; color: red"></a-entity>
 
-    <a-entity id="soda_can_2 object" position="42.41604 0.3 7.08747" gltf-model="#soda_can_2-glb"
-      scale="1.5 1.5 1.5" event-set__down="_event: mousedown; visible: false;"
+    <a-entity id="soda_can_2 object" position="42.41604 0.3 7.08747" gltf-model="#soda_can_2-glb" scale="1.5 1.5 1.5"
+      event-set__down="_event: mousedown; visible: false;"
       event-set__enter="_event: mouseenter; _target: #cursor; color: yellow;"
       event-set__leave="_event: mouseleave; _target: #cursor; color: red"></a-entity>
 
@@ -277,8 +281,9 @@
       event-set__enter="_event: mouseenter; _target: #cursor; color: yellow;"
       event-set__leave="_event: mouseleave; _target: #cursor; color: red"></a-entity>
 
-      <a-entity id="plastic_bottle object" rotation="46.574020292799226 5.926102475038104 4.311507408359445" position="-26.15608 0.24777 45.95759" gltf-model="#plastic_bottle-glb"
-      scale="0.2 0.2 0.2" event-set__down="_event: mousedown; visible: false;"
+    <a-entity id="plastic_bottle object" rotation="46.574020292799226 5.926102475038104 4.311507408359445"
+      position="-26.15608 0.24777 45.95759" gltf-model="#plastic_bottle-glb" scale="0.2 0.2 0.2"
+      event-set__down="_event: mousedown; visible: false;"
       event-set__enter="_event: mouseenter; _target: #cursor; color: yellow;"
       event-set__leave="_event: mouseleave; _target: #cursor; color: red"></a-entity>
 
