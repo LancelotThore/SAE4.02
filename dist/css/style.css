@@ -70,8 +70,9 @@ body {
   gap: 3rem;
 }
 .main__image {
-  border: 2px var(--clr-primary) solid;
+  border: 3px var(--clr-primary) solid;
   border-radius: 10px;
+  width: 50rem;
 }
 .main__jouer {
   display: flex;
@@ -103,6 +104,7 @@ body {
   padding: 1rem;
   background-color: var(--clr-primary);
   border-radius: 10px;
+  width: 50rem;
 }
 .main__section__image {
   width: 15rem;
@@ -124,6 +126,32 @@ body {
   gap: 1rem;
   padding: 0rem 1rem;
   text-align: center;
+}
+
+@media only screen and (max-width: 850px) {
+  .header__titre {
+    font-size: 1.6rem;
+  }
+  .header__nav__liste {
+    gap: 1rem;
+  }
+  .main__image {
+    width: 25rem;
+  }
+  .main__jouer {
+    font-size: 1.5rem;
+    gap: 0.5rem;
+  }
+  .main__jouer__image {
+    width: 1.5rem;
+  }
+  .main__section {
+    flex-direction: column;
+    width: 25rem;
+  }
+  .main__section__image {
+    width: 8rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -41,8 +41,9 @@ body{
     gap: 3rem;
 
     &__image{
-        border: 2px var(--clr-primary) solid;
+        border: 3px var(--clr-primary) solid;
         border-radius: 10px;
+        width: 50rem;
     }
 
     &__jouer{
@@ -78,6 +79,7 @@ body{
         padding: 1rem;
         background-color: var(--clr-primary);
         border-radius: 10px;
+        width: 50rem;
 
         &__image{
             width: 15rem;
@@ -101,6 +103,48 @@ body{
                 gap: 1rem;
                 padding: 0rem 1rem;
                 text-align: center;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 850px) {
+
+    .header{
+
+        &__titre{
+            font-size: 1.6rem;
+        }
+
+        &__nav{
+
+            &__liste{
+                gap: 1rem;
+            }
+        }
+    }
+
+    .main{
+
+        &__image{
+            width: 25rem;
+        }
+
+        &__jouer{
+            font-size: 1.5rem;
+            gap: .5rem;
+
+            &__image{
+                width: 1.5rem;
+            }
+        }
+
+        &__section{
+            flex-direction: column;
+            width: 25rem;
+
+            &__image{
+                width: 8rem;
             }
         }
     }
