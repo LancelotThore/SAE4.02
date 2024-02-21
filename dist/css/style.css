@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+  --clr-bg: #578D93;
+  --clr-primary: #EADCBF;
+  --clr-secondary: #F2F2F2;
+  --clr-font: #333333;
+  --font-family: Montserrat, serif;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol, ul, li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+body {
+  background-color: var(--clr-bg);
+  color: var(--clr-font);
+  font-family: var(--font-family);
+}
+
+.header {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: var(--clr-primary);
+}
+.header__titre {
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+.header__nav__liste {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+.header__nav__liste__rubrique {
+  font-weight: 600;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8rem 3rem 3rem;
+  gap: 3rem;
+}
+.main__image {
+  border: 2px var(--clr-primary) solid;
+  border-radius: 10px;
+}
+.main__jouer {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 1rem;
+  font-family: var(--font-family);
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--clr-font);
+  border: none;
+  border-radius: 10px;
+  background-color: var(--clr-secondary);
+  transition: 0.5s;
+}
+.main__jouer:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+.main__jouer__image {
+  width: 3rem;
+}
+.main__section {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 1rem;
+  background-color: var(--clr-primary);
+  border-radius: 10px;
+}
+.main__section__image {
+  width: 15rem;
+  height: fit-content;
+  border-radius: 10px;
+}
+.main__section__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.main__section__content__titre {
+  text-align: center;
+  font-weight: 600;
+}
+.main__section__content__texte {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0rem 1rem;
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+$colors: (
+    bg: #578D93,
+    primary: #EADCBF,
+    secondary: #F2F2F2,
+    font: #333333,
+);
+
+$font-family: "Montserrat, serif";
+
+:root{
+    @each $key, $value in $colors {
+        --clr-#{$key}: #{$value};
+    };
+
+    --font-family: #{$font-family};
+};

@@ -1,0 +1,107 @@
+body{
+    background-color: var(--clr-bg);
+    color: var(--clr-font);
+    font-family: var(--font-family);
+}
+
+.header{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: var(--clr-primary);
+
+    &__titre{
+        font-weight: 700;
+        font-size: 2.5rem;
+    }
+
+    &__nav{
+
+        &__liste{
+            display: flex;
+            flex-direction: row;
+            gap: 1.5rem;
+
+            &__rubrique{
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8rem 3rem 3rem;
+    gap: 3rem;
+
+    &__image{
+        border: 2px var(--clr-primary) solid;
+        border-radius: 10px;
+    }
+
+    &__jouer{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 1rem;
+        padding: 1rem;
+        font-family: var(--font-family);
+        font-size: 3rem;
+        font-weight: 600;
+        color: var(--clr-font);
+        border: none;
+        border-radius: 10px;
+        background-color: var(--clr-secondary);
+        transition: 0.5s;
+
+        &:hover{
+            transform: scale(1.1);
+            transition: 0.5s;
+        }
+
+        &__image{
+            width: 3rem;
+        }
+    }
+
+    &__section{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 2rem;
+        padding: 1rem;
+        background-color: var(--clr-primary);
+        border-radius: 10px;
+
+        &__image{
+            width: 15rem;
+            height: fit-content;
+            border-radius: 10px;
+        }
+
+        &__content{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            &__titre{
+                text-align: center;
+                font-weight: 600;
+            }
+
+            &__texte{
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                padding: 0rem 1rem;
+                text-align: center;
+            }
+        }
+    }
+}
