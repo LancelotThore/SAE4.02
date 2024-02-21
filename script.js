@@ -7,7 +7,7 @@ function checkPlayerPosition() {
     var playerY = playerPosition.y;
     var playerZ = playerPosition.z;
 
-    //console.log("Z : " + playerZ);
+    // console.log("Z : " + playerZ);
     // console.log("X : " + playerX);
     let form = Math.sqrt((playerX**2)+(playerZ**2));
 
