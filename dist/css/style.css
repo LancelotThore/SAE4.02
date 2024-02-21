@@ -40,7 +40,8 @@ body {
 }
 
 .header {
-  position: fixed;
+  position: sticky;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -48,25 +49,32 @@ body {
   width: 100%;
   padding: 1rem 2rem;
   background-color: var(--clr-primary);
+  z-index: 1000;
 }
 .header__titre {
   font-weight: 700;
   font-size: 2.5rem;
 }
-.header__nav__liste {
+.header__nav {
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
 }
-.header__nav__liste__rubrique {
+.header__nav__rubrique {
+  color: var(--clr-font);
   font-weight: 600;
+  text-decoration: none;
+}
+
+.ancre {
+  scroll-margin: 100px;
 }
 
 .main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 8rem 3rem 3rem;
+  padding: 3rem;
   gap: 3rem;
 }
 .main__image {
@@ -88,6 +96,7 @@ body {
   border-radius: 10px;
   background-color: var(--clr-secondary);
   transition: 0.5s;
+  cursor: pointer;
 }
 .main__jouer:hover {
   transform: scale(1.1);
