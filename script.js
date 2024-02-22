@@ -8,7 +8,7 @@ function handlerScore(ev){
             el.setAttribute('text', {value: 'Déchets collectés : ' + score + '/5'});
         }
     }
-    if (score == 4){
+    if (score == 5){
         console.log("Vous avez ramassé tous les objets !");
     }
 }
