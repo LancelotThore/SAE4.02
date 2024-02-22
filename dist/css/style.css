@@ -33,6 +33,13 @@ img {
   height: auto;
 }
 
+<<<<<<< Updated upstream
+=======
+a {
+  text-decoration: none;
+}
+
+>>>>>>> Stashed changes
 body {
   background-color: var(--clr-bg);
   color: var(--clr-font);
@@ -63,7 +70,10 @@ body {
 .header__nav__rubrique {
   color: var(--clr-font);
   font-weight: 600;
+<<<<<<< Updated upstream
   text-decoration: none;
+=======
+>>>>>>> Stashed changes
 }
 
 .ancre {
