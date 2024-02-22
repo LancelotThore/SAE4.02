@@ -9,8 +9,7 @@
   <!-- <script src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></script> -->
   <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.2/dist/aframe-physics-system.js"></script>
-  <script
-    src="https://cdn.jsdelivr.net/gh/LancelotThore/aframe-extras@db4ab7281987eff666aadbc14e0a6f5f33141761/dist/aframe-extras.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/LancelotThore/aframe-extras@db4ab7281987eff666aadbc14e0a6f5f33141761/dist/aframe-extras.js"></script>
   <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
   <title>SAE 402</title>
 </head>
@@ -73,7 +72,7 @@
     <!-- cam -->
     <a-entity movement-controls="" id="cam" gamepad-controls="" rotation="0 180 0" trackpad-controls=""
       keyboard-controls="" touch-controls="" position="0 1.6 0">
-      <a-camera kinematic-body look-controls="pointerLockEnabled: true; touchEnabled: true;" position="0 0 55">
+      <a-camera kinematic-body id="cam2" look-controls="pointerLockEnabled: true; touchEnabled: true;" position="0 0 54">
         <a-cursor id="cursor" color="red"></a-cursor>
       </a-camera>
     </a-entity>
