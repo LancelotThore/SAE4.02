@@ -156,7 +156,7 @@ body {
 .main__section2__content {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  width: 47rem;
 }
 .main__section2__content__image {
   width: 47rem;
