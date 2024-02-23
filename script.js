@@ -3,10 +3,14 @@ var score = 0;
 
 function handlerScore(ev){
     if (ev.target.id.includes('object')){
-        score += 1;
-        for (let el of document.querySelectorAll('#score')){
-            el.setAttribute('text', {value: 'Dechets collectes : ' + score + '/5'});
+        if (ev.target.classList.contains('clicked') == false){
+            score += 1;
+            for (let el of document.querySelectorAll('#score')){
+                el.setAttribute('text', {value: 'Dechets collectes : ' + score + '/5'});
+            }
+            ev.target.classList.add('clicked');
         }
+        
     }
     if (score == 5){
         for (let el of document.querySelectorAll('#score')){
