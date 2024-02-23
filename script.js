@@ -23,6 +23,8 @@ function handlerScore(ev){
         for (let el of document.querySelectorAll('#score')){
             el.setAttribute('text', {value: 'Vous avez gagné !'});
         }
+        // change l'affichage du panneau
+        document.querySelector("#tutoText").setAttribute('text', {value: 'Bien joue ! Maintenant l`ile est propre. Merci beaucoup !'});
     }
 }
 
