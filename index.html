@@ -9,7 +9,8 @@
   <script src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></script>
   <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.2/dist/aframe-physics-system.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/LancelotThore/aframe-extras@db4ab7281987eff666aadbc14e0a6f5f33141761/dist/aframe-extras.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/gh/LancelotThore/aframe-extras@db4ab7281987eff666aadbc14e0a6f5f33141761/dist/aframe-extras.js"></script>
   <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
   <title>SAE 402</title>
 </head>
@@ -72,7 +73,8 @@
     <!-- cam -->
     <a-entity movement-controls="" id="cam" gamepad-controls="" rotation="0 180 0" trackpad-controls=""
       keyboard-controls="" touch-controls="" position="0 1.6 0">
-      <a-camera kinematic-body id="cam2" look-controls="pointerLockEnabled: true; touchEnabled: true;" position="0 0 54">
+      <a-camera kinematic-body id="cam2" look-controls="pointerLockEnabled: true; touchEnabled: true;"
+        position="0 0 54">
         <a-cursor id="cursor" color="red"></a-cursor>
       </a-camera>
     </a-entity>
@@ -241,8 +243,8 @@
       value="Bonjour je suis le perroquet, il faut que tu trouves les dechets caches sur cette ile ton curseur change de couleur quand tu regarde un dechets comme avec moi"
       color="#000000" visible="false" position="-1.58934 1.75892 -45.54364" width="2" font="monoid"></a-text>
 
-    <a-text id="nameIsland" font="monoid" position="-1.873 1.796 -45.53346" value="Cliquez sur le perroquet" color="#000000" width="2"
-      rotation="0 -180 0"></a-text>
+    <a-text id="nameIsland" font="monoid" position="-1.873 1.796 -45.53346" value="Cliquez sur le perroquet"
+      color="#000000" width="2" rotation="0 -180 0"></a-text>
 
     <a-entity id="sign" scale="1.5 1 1" rotation="0 180 0" position="-2.472 0 -45.492" gltf-model="#pancarte"
       positioon="0 1 0"></a-entity>
@@ -260,31 +262,33 @@
     <a-sky id="sky" src="#sky-img" radius="150"></a-sky>
 
     <!-- déchets -->
-    <a-entity id="trash object" position="-6.79519 0.3 30.95289" obj-model="obj: #trash-obj; mtl: #trash-mtl"
-      scale="3 3 3" event-set__down="_event: mousedown; visible: false;"
-      event-set__enter="_event: mouseenter; _target: #cursor; color: yellow;"
-      event-set__leave="_event: mouseleave; _target: #cursor; color: red"></a-entity>
+    <a-entity id="dechets">
+      <a-entity id="trash object" position="-6.79519 0.3 30.95289" obj-model="obj: #trash-obj; mtl: #trash-mtl"
+        scale="3 3 3" event-set__down="_event: mousedown; visible: false;"
+        event-set__enter="_event: mouseenter; _target: #cursor; color: yellow;"
+        event-set__leave="_event: mouseleave; _target: #cursor; color: red"></a-entity>
 
-    <a-entity id="soda_can_1 object" position="-5.69763 0.223 -27.90234" gltf-model="#soda_can_1-glb"
-      scale="0.02 0.02 0.02" event-set__down="_event: mousedown; visible: false;"
-      event-set__enter="_event: mouseenter; _target: #cursor; color: yellow;"
-      event-set__leave="_event: mouseleave; _target: #cursor; color: red"></a-entity>
+      <a-entity id="soda_can_1 object" position="-5.69763 0.223 -27.90234" gltf-model="#soda_can_1-glb"
+        scale="0.02 0.02 0.02" event-set__down="_event: mousedown; visible: false;"
+        event-set__enter="_event: mouseenter; _target: #cursor; color: yellow;"
+        event-set__leave="_event: mouseleave; _target: #cursor; color: red"></a-entity>
 
-    <a-entity id="soda_can_2 object" position="42.41604 0.3 7.08747" gltf-model="#soda_can_2-glb" scale="1.5 1.5 1.5"
-      event-set__down="_event: mousedown; visible: false;"
-      event-set__enter="_event: mouseenter; _target: #cursor; color: yellow;"
-      event-set__leave="_event: mouseleave; _target: #cursor; color: red"></a-entity>
+      <a-entity id="soda_can_2 object" position="42.41604 0.3 7.08747" gltf-model="#soda_can_2-glb" scale="1.5 1.5 1.5"
+        event-set__down="_event: mousedown; visible: false;"
+        event-set__enter="_event: mouseenter; _target: #cursor; color: yellow;"
+        event-set__leave="_event: mouseleave; _target: #cursor; color: red"></a-entity>
 
-    <a-entity id="toilet_paper object" position="-40.32388 3.17703 -12.39722" gltf-model="#toilet_paper-glb"
-      scale="0.2 0.2 0.2" event-set__down="_event: mousedown; visible: false;"
-      event-set__enter="_event: mouseenter; _target: #cursor; color: yellow;"
-      event-set__leave="_event: mouseleave; _target: #cursor; color: red"></a-entity>
+      <a-entity id="toilet_paper object" position="-40.32388 3.17703 -12.39722" gltf-model="#toilet_paper-glb"
+        scale="0.2 0.2 0.2" event-set__down="_event: mousedown; visible: false;"
+        event-set__enter="_event: mouseenter; _target: #cursor; color: yellow;"
+        event-set__leave="_event: mouseleave; _target: #cursor; color: red"></a-entity>
 
-    <a-entity id="plastic_bottle object" rotation="46.574020292799226 5.926102475038104 4.311507408359445"
-      position="-26.15608 0.24777 45.95759" gltf-model="#plastic_bottle-glb" scale="0.2 0.2 0.2"
-      event-set__down="_event: mousedown; visible: false;"
-      event-set__enter="_event: mouseenter; _target: #cursor; color: yellow;"
-      event-set__leave="_event: mouseleave; _target: #cursor; color: red"></a-entity>
+      <a-entity id="plastic_bottle object" rotation="46.574020292799226 5.926102475038104 4.311507408359445"
+        position="-26.15608 0.24777 45.95759" gltf-model="#plastic_bottle-glb" scale="0.2 0.2 0.2"
+        event-set__down="_event: mousedown; visible: false;"
+        event-set__enter="_event: mouseenter; _target: #cursor; color: yellow;"
+        event-set__leave="_event: mouseleave; _target: #cursor; color: red"></a-entity>
+    </a-entity>
 
   </a-scene>
 
