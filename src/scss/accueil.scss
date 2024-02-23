@@ -111,6 +111,43 @@ body{
             }
         }
     }
+
+    &__section2{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 2rem;
+        padding: 1rem;
+        background-color: var(--clr-primary);
+        border-radius: 10px;
+        width: 50rem;
+
+        &__titre{
+            text-align: center;
+            font-weight: 600;
+        }
+        &__content{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &__image{
+                width: 47rem;
+                height: fit-content;
+                border-radius: 10px;
+            }
+
+            &__titre{
+                font-weight: 600;
+            }
+    
+            &__texte{
+                display: flex;
+                flex-direction: column;
+                // width: min-content;
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 850px) {
@@ -150,6 +187,14 @@ body{
 
             &__image{
                 width: 8rem;
+            }
+        }
+
+        &__section2{
+            width: 25rem;
+
+            &__image{
+                width: 23rem;
             }
         }
     }
