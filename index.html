@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-  <!-- <script src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></script> -->
+  <script src="https://cdn.aframe.io/fonts/Roboto-msdf.json"></script>
   <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-physics-system@v4.2.2/dist/aframe-physics-system.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/LancelotThore/aframe-extras@db4ab7281987eff666aadbc14e0a6f5f33141761/dist/aframe-extras.js"></script>
@@ -63,10 +63,10 @@
     </a-assets>
 
     <a-entity id="score" scale="20 20 20"
-      text="font: https://cdn.aframe.io/fonts/Roboto-msdf.json; align: center; baseline: center; width: 10; height: 10; value: Dechets Collectes : 0/5"
+      text="font: roboto; align: center; baseline: center; width: 10; height: 10; value: Dechets Collectes : 0/5"
       rotation="-220 0 180" position="0 100 100" width="400" height="400"></a-entity>
     <a-entity id="score" scale="20 20 20"
-      text="font: https://cdn.aframe.io/fonts/Roboto-msdf.json; align: center; baseline: center; width: 10; height: 10; value: Dechets Collectes : 0/5"
+      text="font: roboto; align: center; baseline: center; width: 10; height: 10; value: Dechets Collectes : 0/5"
       rotation="-220 -180 180" position="0 100 -100" width="400" height="400"></a-entity>
 
     <!-- cam -->
@@ -265,7 +265,7 @@
       event-set__enter="_event: mouseenter; _target: #cursor; color: yellow;"
       event-set__leave="_event: mouseleave; _target: #cursor; color: red"></a-entity>
 
-    <a-entity id="soda_can_1 object" position="-5.69763 0.3 -27.90234" gltf-model="#soda_can_1-glb"
+    <a-entity id="soda_can_1 object" position="-5.69763 0.223 -27.90234" gltf-model="#soda_can_1-glb"
       scale="0.02 0.02 0.02" event-set__down="_event: mousedown; visible: false;"
       event-set__enter="_event: mouseenter; _target: #cursor; color: yellow;"
       event-set__leave="_event: mouseleave; _target: #cursor; color: red"></a-entity>

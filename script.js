@@ -5,11 +5,14 @@ function handlerScore(ev){
     if (ev.target.id.includes('object')){
         score += 1;
         for (let el of document.querySelectorAll('#score')){
-            el.setAttribute('text', {value: 'Déchets collectés : ' + score + '/5'});
+            el.setAttribute('text', {value: 'Dechets collectes : ' + score + '/5'});
         }
     }
     if (score == 5){
-        console.log("Vous avez ramassé tous les objets !");
+        for (let el of document.querySelectorAll('#score')){
+            el.setAttribute('text', {value: 'Vous avez gagne !'});
+        }
+
     }
 }
 
